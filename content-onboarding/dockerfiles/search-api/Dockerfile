@@ -1,4 +1,4 @@
-FROM coady/pylucene:8
+FROM coady/pylucene:9.6
 # coady/pylucene:8 runs on Python 3.10.4, which is the most similar version 
 # required by our Poetry project.
 # TODO: To use pylucene:9, the poetry project needs to support Python 3.11
@@ -8,7 +8,7 @@ COPY ./entrypoint.sh /entrypoint.sh
 RUN apt update \  
   && apt install -y git tmux curl vim \
   # install the basic libraries needed to run the Flask app using the Python version used for PyLucene
-  && pip install git+https://github.com/uic-evl/bio-search.git@main#subdirectory=content-onboarding \
+  && pip install git+https://github.com/Hosseinfatho/bio-search.git@main#subdirectory=content-onboarding \
   && git clone https://github.com/uic-evl/bio-search.git \
   && pip install gunicorn \
   && apt clean && apt autoclean \
