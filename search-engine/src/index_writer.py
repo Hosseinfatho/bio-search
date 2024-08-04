@@ -9,7 +9,7 @@ from java.nio.file import Paths
 from org.apache.lucene.analysis.standard import StandardAnalyzer
 from org.apache.lucene.index import IndexWriter, IndexWriterConfig
 #from org.apache.lucene.store import SimpleFSDirectory
-from org.apache.lucene.store import NIOFSDirectory
+from org.apache.lucene.store import RAFDirectory 
 
 from org.apache.lucene.document import (
     Document,
@@ -44,7 +44,7 @@ class Indexer:
         self.store_path = store_path
         self.create_mode = create_mode
 
-    def __create_index_writer(self, store: NIOFSDirectory) -> IndexWriter:
+    def __create_index_writer(self, store: RAFDirectory ) -> IndexWriter:
         analyzer = StandardAnalyzer()
         config = IndexWriterConfig(analyzer)
         if self.create_mode:
@@ -73,7 +73,7 @@ class Indexer:
         if ft_provider:
             fields["full_text"] = ft_provider
 
-        store = NIOFSDirectory(Paths.get(self.store_path))
+        store = RAFDirectory (Paths.get(self.store_path))
         writer = self.__create_index_writer(store)
 
         try:
