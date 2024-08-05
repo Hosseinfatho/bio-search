@@ -12,7 +12,7 @@ from org.apache.lucene.document import LongPoint
 from org.apache.lucene.index import DirectoryReader
 from org.apache.lucene.search import IndexSearcher, BooleanClause, BooleanQuery
 #from org.apache.lucene.store import SimpleFSDirectory
-from org.apache.lucene.store import RAFDirectory 
+from org.apache.lucene.misc.store import RAFDirectory  
 
 from org.apache.lucene.queryparser.classic import QueryParser
 from org.apache.lucene.search.highlight import (

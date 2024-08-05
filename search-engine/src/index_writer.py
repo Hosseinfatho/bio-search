@@ -9,7 +9,7 @@ from java.nio.file import Paths
 from org.apache.lucene.analysis.standard import StandardAnalyzer
 from org.apache.lucene.index import IndexWriter, IndexWriterConfig
 #from org.apache.lucene.store import SimpleFSDirectory
-from org.apache.lucene.store import RAFDirectory 
+from org.apache.lucene.misc.store import RAFDirectory 
 
 from org.apache.lucene.document import (
     Document,
