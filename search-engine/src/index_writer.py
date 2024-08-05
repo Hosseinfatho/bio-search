@@ -73,7 +73,7 @@ class Indexer:
         if ft_provider:
             fields["full_text"] = ft_provider
 
-        store = RAFDirectory (Paths.get(self.store_path))
+        store = RAFDirectory(Paths.get(self.store_path))
         writer = self.__create_index_writer(store)
 
         try:

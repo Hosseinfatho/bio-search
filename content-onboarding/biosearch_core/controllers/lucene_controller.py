@@ -23,7 +23,7 @@ from org.apache.lucene.index import DirectoryReader
 from org.apache.lucene.search import IndexSearcher, BooleanClause, BooleanQuery
 
 # pylint: disable=import-error
-from org.apache.lucene.misc.store import RAFDirectory 
+from org.apache.lucene.misc.store import RAFDirectory
 # pylint: disable=import-error
 from org.apache.lucene.queryparser.classic import QueryParser
 
@@ -64,7 +64,7 @@ class Reader:
         highlight_captions=False,
     ) -> List[SearchResult]:
         """search index by fields"""
-        index_dir = RAFDirectory (Paths.get(self.store_path))
+        index_dir = RAFDirectory(Paths.get(self.store_path))
         dir_reader = DirectoryReader.open(index_dir)
         searcher = IndexSearcher(dir_reader)
 
